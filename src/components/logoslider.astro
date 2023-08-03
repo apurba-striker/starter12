@@ -1,0 +1,93 @@
+---
+import { AmazonLogo } from "../assets/logos/AmazonLogo";
+
+---
+
+<!-- src/LogoSlider.astro -->
+
+<astro>
+
+  <script>
+    import { onMount } from 'solid-js';
+    import Swiper from 'swiper';
+    import 'swiper/swiper-bundle.min.css';
+    import { AmazonLogo } from "../assets/logos/AmazonLogo";
+    import { DropboxLogo } from "../assets/logos/DropboxLogo";
+    import { NetflixLogo } from "../assets/logos/NetflixLogo";
+    import { SlackLogo } from "../assets/logos/SlackLogo";
+    import { SpotifyLogo } from "../assets/logos/SpotifyLogo";
+    import { StripeLogo } from "../assets/logos/StripeLogo";
+
+    const logoData = [
+      { id: 1, src: 'http://recruiters-zone.com/static/media/BRS_Ventures.0722bfe22318cd3f3f5d.jpg', alt: 'Logo 1'},
+      { id: 2, src: 'http://recruiters-zone.com/static/media/ibexglobal.bbde01ca0d4903ed36b1.png', alt: 'Logo 2'},
+      { id: 3, src: 'http://recruiters-zone.com/static/media/BRS_Ventures.0722bfe22318cd3f3f5d.jpg', alt: 'Logo 3'},
+      { id: 4, src: 'http://recruiters-zone.com/static/media/ibexglobal.bbde01ca0d4903ed36b1.png', alt: 'Logo 4' },
+      { id: 5, src: 'http://recruiters-zone.com/static/media/BRS_Ventures.0722bfe22318cd3f3f5d.jpg', alt: 'Logo 5'},
+      { id: 6, src: 'http://recruiters-zone.com/static/media/ibexglobal.bbde01ca0d4903ed36b1.png', alt: 'Logo 5' },
+      // Add more logo data as needed
+    ];
+
+    onMount(() => {
+      new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        loop: true,
+        spaceBetween: 20,
+        autoplay: {
+          delay: 2000,
+        },
+        speed: 1000,
+      });
+    });
+  </script>
+
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      
+        <div class="swiper-slide">
+          <AmazonLogo />
+        </div>
+        <div class="swiper-slide">
+          <AmazonLogo />
+        </div>
+        <div class="swiper-slide">
+          <AmazonLogo />
+        </div>
+        <div class="swiper-slide">
+          <AmazonLogo />
+        </div>
+        <div class="swiper-slide">
+          <AmazonLogo />
+        </div>
+        <div class="swiper-slide">
+          <AmazonLogo />
+        </div>
+        <div class="swiper-slide">
+          <AmazonLogo />
+        </div>
+      
+    </div>
+  </div>
+
+  <style>
+    /* Add your custom CSS styles here */
+    .swiper-container {
+      padding: 20px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      background-color: #f3f3f3;
+    }
+
+    .swiper-slide img {
+      max-width: 100%;
+      max-height: 100px;
+      object-fit: contain;
+    }
+  </style>
+
+</astro>
